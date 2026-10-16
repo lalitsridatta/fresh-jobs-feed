@@ -1,0 +1,63 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #1a1d29;
+  --muted: #6b7280;
+  --primary: #5b21b6;
+  --border: #e5e7eb;
+  --green: #059669;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+h1 { margin: 0; }
+.subtitle { color: var(--muted); margin: 4px 0 20px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.filter-bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+.filter-bar input[type="search"] { flex: 1; min-width: 200px; }
+input[type="search"], select {
+  padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; background: #fff;
+}
+.checkbox { display: flex; gap: 6px; align-items: center; font-size: 14px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 16px; display: flex; flex-direction: column; gap: 12px;
+}
+.card h2 { font-size: 17px; margin: 0 0 4px; }
+.card-top { display: flex; justify-content: space-between; gap: 8px; }
+.meta { color: var(--muted); font-size: 13px; margin: 0; }
+.badge { background: #d1fae5; color: var(--green); font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; height: fit-content; }
+
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; }
+.tags li { background: #ede9fe; color: var(--primary); font-size: 12px; padding: 3px 8px; border-radius: 6px; }
+
+.card-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+.posted { font-size: 12px; color: var(--muted); }
+
+.btn {
+  border: 1px solid var(--primary); background: #fff; color: var(--primary);
+  padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 13px;
+}
+.btn:hover { background: #f5f3ff; }
+.btn.saved { background: var(--primary); color: #fff; }
+.btn:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #a78bfa; outline-offset: 2px; }
+
+.status { color: var(--muted); }
+.status.error { color: #b91c1c; }
+.count { font-size: 13px; color: var(--muted); }
